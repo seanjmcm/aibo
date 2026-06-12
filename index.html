@@ -288,7 +288,20 @@
         .card h3 {
             font-size: 1.2rem;
             margin-bottom: 15px;
+            transition: color 0.3s ease;
         }
+
+        .card:nth-child(1) { border-top-color: var(--accent-orange); }
+        .card:nth-child(1):hover h3 { color: var(--accent-orange); }
+
+        .card:nth-child(2) { border-top-color: var(--accent-teal); }
+        .card:nth-child(2):hover h3 { color: var(--accent-teal); }
+
+        .card:nth-child(3) { border-top-color: #E63946; } /* Alert Red for Wrong Gear */
+        .card:nth-child(3):hover h3 { color: #E63946; }
+
+        .card:nth-child(4) { border-top-color: #8E24AA; } /* Deep Purple for Dependency */
+        .card:nth-child(4):hover h3 { color: #8E24AA; }
 
         .card p {
             font-size: 0.95rem;
