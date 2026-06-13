@@ -145,7 +145,7 @@
             height: 100%;
             background: linear-gradient(rgba(26, 43, 76, 0.85), rgba(26, 43, 76, 0.85)), url('engineer_dna_hero.png') center/cover no-repeat;
             z-index: -1;
-            animation: heroMove 10s infinite alternate ease-in-out;
+            animation: heroMove 5s infinite alternate ease-in-out;
             transform-origin: center center;
         }
 
@@ -1044,13 +1044,29 @@
 
             let mouse = { x: null, y: null };
 
-            window.addEventListener('mousemove', function (event) {
-                mouse.x = event.x;
-                mouse.y = event.y;
+            function createParticles(x, y) {
+                mouse.x = x;
+                mouse.y = y;
                 for (let i = 0; i < 2; i++) {
                     particlesArray.push(new Particle());
                 }
+            }
+
+            window.addEventListener('mousemove', function (event) {
+                createParticles(event.x, event.y);
             });
+
+            window.addEventListener('touchmove', function (event) {
+                if (event.touches.length > 0) {
+                    createParticles(event.touches[0].clientX, event.touches[0].clientY);
+                }
+            }, { passive: true });
+
+            window.addEventListener('touchstart', function (event) {
+                if (event.touches.length > 0) {
+                    createParticles(event.touches[0].clientX, event.touches[0].clientY);
+                }
+            }, { passive: true });
 
             class Particle {
                 constructor() {
