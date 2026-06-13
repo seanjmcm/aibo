@@ -72,10 +72,15 @@
         }
 
         .logo {
-            font-size: 28px;
-            font-weight: 800;
-            color: var(--primary-blue);
-            letter-spacing: -1px;
+            display: flex;
+            align-items: center;
+            text-decoration: none;
+        }
+
+        .logo img {
+            height: 60px;
+            width: auto;
+            display: block;
         }
 
         .nav-links a {
@@ -621,7 +626,7 @@
 
     <nav>
         <div class="container nav-container">
-            <div class="logo">aibo.</div>
+            <a href="#" class="logo"><img src="aibo-logo.png" alt="AIBO Logo"></a>
             <div class="nav-links">
                 <a href="#problem">The Gap</a>
                 <a href="#solution">The System</a>
